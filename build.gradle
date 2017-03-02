@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.athaydes.gradle.osgi:osgi-run-core:1.5.4"
+    }
+}
+
+plugins {
+    id "com.athaydes.osgi-run" version "1.5.4"
+    id 'org.dm.bundle' version '0.10.0'
+}
+
+apply plugin: 'groovy'
+
+group 'osgi-gs-tutorial'
+version '1.0'
+
+repositories {
+    jcenter()
+}
+
+bundle {
+    instruction 'Export-Package', ''
+    instruction 'Bundle-Activator', 'example1.Activator'
+}
+
+dependencies {
+    compile 'org.osgi:osgi.core:6.0.0'
+    compile 'org.osgi:osgi.cmpn:6.0.0'
+    compile 'org.osgi:org.osgi.enterprise:5.0.0'
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    osgiRuntime 'org.apache.felix:org.apache.felix.configadmin:1.8.8'
+}
+
+runOsgi {
+    javaArgs = "-Dexample.configFile=${file( 'config-example.properties' ).absolutePath}"
+    configSettings = 'felix'
+    bundles += project
+}
