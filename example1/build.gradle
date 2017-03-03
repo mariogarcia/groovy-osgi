@@ -14,7 +14,7 @@ plugins {
 
 apply plugin: 'groovy'
 
-group 'osgi-gs-tutorial'
+group 'groovy-osgi-gs'
 version '1.0'
 
 repositories {
