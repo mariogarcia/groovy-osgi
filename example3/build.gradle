@@ -22,7 +22,7 @@ repositories {
 }
 
 bundle {
-    instruction 'Bundle-Name',  'English dictionary 2'
+    instruction 'Bundle-Name',  'English dictionary 2 client'
     instruction 'Bundle-Description',  'A bundle that registers an English dictionary service'
     instruction 'Bundle-Vendor',  'Apache Felix'
     instruction 'Bundle-Version',  '1.0.0'
