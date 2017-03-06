@@ -1,0 +1,16 @@
+project.subprojects {
+    buildscript {
+        repositories {
+            jcenter()
+        }
+        dependencies {
+            classpath "com.athaydes.gradle.osgi:osgi-run-core:1.5.4"
+        }
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    group 'groovy-osgi-gs'
+}
